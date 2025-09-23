@@ -1,0 +1,19 @@
+{
+  "name": "sobin2",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "file": [
+    "dist/**/*",
+    "bindb"
+  ],
+  "devDependencies": {
+    "@types/async": "^3.2.25",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+  }
+}
