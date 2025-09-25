@@ -1,6 +1,6 @@
 import { getEngineBinCheck, type BinCheckInfo } from "./bincheck"
 import { getEnginePst, type BinPstInfo } from "./pst"
-import * as countries from "world-countries"
+import countries from "world-countries"
 
 export * from "./bincheck"
 export * from "./pst"
@@ -29,7 +29,7 @@ export async function lookupBin(bin: string, engine: "pst" | "bincheck" = "binch
     }
     if (binCheck[bin]) {
         const info = binCheck[bin];
-        const country = countries.default.find(c => (
+        const country = countries.find(c => (
             c.cca3 === info.country_iso3 || c.cca2 === info.country_code
         ));
         return {
