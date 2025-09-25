@@ -1,7 +1,11 @@
-import { getEngineBinCheck } from "./bincheck"
-import { getEnginePst } from "./pst"
+import { getEngineBinCheck, type BinCheckInfo } from "./bincheck"
+import { getEnginePst, type BinPstInfo } from "./pst"
 
-export async function lookupBin(bin: string, engine: "pst" | "bincheck" = "bincheck"): Promise<any> {
+export * from "./bincheck"
+export * from "./pst"
+
+export type BinInfo = (BinPstInfo | BinCheckInfo) & { bin: string }
+export async function lookupBin(bin: string, engine: "pst" | "bincheck" = "bincheck"): Promise<BinInfo | undefined> {
     bin = bin.substring(0, 6)
     let binCheck: Record<string, any> = {};
     if (engine === "pst") {
@@ -16,5 +20,3 @@ export async function lookupBin(bin: string, engine: "pst" | "bincheck" = "binch
     }
 }
 
-lookupBin("440393","pst").then(console.log)
-lookupBin("440393").then(console.log)

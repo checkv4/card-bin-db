@@ -1,0 +1,31 @@
+# Source files
+src/
+*.ts
+!dist/**/*.d.ts
+
+# Build tools
+tsconfig*.json
+bun.lock
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
+# Development
+.git/
+.gitignore
+node_modules/
+*.log
+
+# Documentation (keep README.md)
+# README.md is included in package.json files
+
+# Utils and scripts
+utils.ts
+pl/
+
+# Data folder (keep bindb)
+data/
+
+# Test files
+test/
+*.test.*
+__tests__/

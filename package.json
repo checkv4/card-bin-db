@@ -1,19 +1,65 @@
 {
-  "name": "sobin2",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
-  "file": [
+  "name": "card-bin-db",
+  "version": "1.0.0",
+  "description": "A fast and lightweight library for querying bank card information (issuer, brand, type, country) based on BIN (Bank Identification Number).",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
     "dist/**/*",
-    "bindb"
+    "bindb/**/*",
+    "README.md",
+    "LICENSE"
   ],
+  "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "test": "bun test",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/checkv4/card-bin-db.git"
+  },
+  "homepage": "https://github.com/checkv4/card-bin-db#readme",
+  "bugs": {
+    "url": "https://github.com/checkv4/card-bin-db/issues"
+  },
+  "keywords": [
+    "bin",
+    "bank-identification-number",
+    "card-lookup",
+    "bank-card",
+    "credit-card",
+    "debit-card",
+    "payment-card",
+    "card-info",
+    "issuer",
+    "card-brand",
+    "visa",
+    "mastercard",
+    "amex",
+    "discover"
+  ],
+  "author": {
+    "name": "checkv4",
+    "url": "https://github.com/checkv4"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "devDependencies": {
     "@types/async": "^3.2.25",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
   },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
