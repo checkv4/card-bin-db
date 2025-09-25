@@ -42,7 +42,7 @@ async function asyncPool<T = any, R = any>(
 }
 
 export async function AppMain(name: string, limit: number, keys: string[], check: (bin: string) => Promise<any>) {
-    const start = 645366;
+    const start = 731391;
     const end = 999999;
     //创建导出目录
     fs.mkdirSync(outdir, { recursive: true });
