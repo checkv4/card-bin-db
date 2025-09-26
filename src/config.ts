@@ -1,11 +1,20 @@
 import path from "path";
 import fs from "fs/promises";
 
+async function exists(path: string): Promise<boolean> {
+    try {
+        await fs.access(path);
+        return true;
+    } catch {
+        return false;
+    }
+}
+
 export const dataDir = path.resolve(process.cwd(), 'bindb');
 
 export async function loadBins<T>(name: string, keys: string[]): Promise<Record<string, T>> {
     const filePath = path.join(dataDir, `${name}.csv`);
-    if (!await fs.exists(filePath)) {
+    if (!await exists(filePath)) {
         throw new Error(`File not found: ${filePath}`);
     }
     const result: Record<string, T> = {};
