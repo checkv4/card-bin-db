@@ -10,7 +10,7 @@ async function exists(path: string): Promise<boolean> {
     }
 }
 
-export const dataDir = path.resolve(process.cwd(), 'bindb');
+export const dataDir = path.resolve(__dirname, '../bindb');
 
 export async function loadBins<T>(name: string, keys: string[]): Promise<Record<string, T>> {
     const filePath = path.join(dataDir, `${name}.csv`);

@@ -1,6 +1,6 @@
 {
   "name": "card-bin-db",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A fast and lightweight library for querying bank card information (issuer, brand, type, country) based on BIN (Bank Identification Number).",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
